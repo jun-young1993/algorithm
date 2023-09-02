@@ -20,9 +20,9 @@ fi
 mkdir -p "$name/__test__"
 
 touch "./$name/__test__/$filename.test.js"
-echo "
-import $filename from '../$filename';
-describe('$name', () => {
+echo "import $filename from '../$filename';
+
+describe('$filename', () => {
 
 })" > "./$name/__test__/$filename.test.js"
 

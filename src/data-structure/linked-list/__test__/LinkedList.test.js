@@ -124,4 +124,20 @@ describe('LinkedList',() => {
         expect(linkedList.tail).toBeNull()
 
     });
+
+    it('should find node for list', function () {
+        const linkedList = new LinkedList();
+        expect(linkedList.find({value : 5})).toBeNull();
+
+        linkedList.append(1).append(2).append(3);
+        const findNode1 = linkedList.find({value : 2});
+        expect(findNode1.value).toBe(2)
+
+        const findNode2 = linkedList.find({cb : (value) => value === 2})
+        const findNode3 = linkedList.find({cb : (value) => value === 3})
+
+        expect(findNode2.value).toBe(2)
+        expect(findNode3.value).toBe(3)
+
+    });
 })

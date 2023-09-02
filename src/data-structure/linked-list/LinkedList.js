@@ -82,7 +82,29 @@ export default class LinkedList {
         }
 
         return head;
+    }
 
+    find({
+             value = undefined,
+             cb =  undefined
+    }){
+        if(this.head === null){
+            return null;
+        }
 
+        let currentNode = this.head;
+
+        while(currentNode){
+
+            if(cb && cb(currentNode.value)){
+                return currentNode;
+            }
+
+            if(value !== undefined && value === currentNode.value){
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
     }
 }
