@@ -101,4 +101,27 @@ describe('LinkedList',() => {
         expect(linkedList.head.next.next.next.value).toBe(4)
         expect(linkedList.tail.value).toBe(4)
     });
+
+    it('should delete head to list', function () {
+        const linkedList = new LinkedList()
+        expect(linkedList.deleteHead()).toBeNull()
+        linkedList.append(1)
+        expect(linkedList.deleteHead().value).toBe(1)
+        expect(linkedList.deleteHead()).toBeNull()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        linkedList.deleteHead()
+        expect(linkedList.head.value).toBe(2)
+        expect(linkedList.head.next.value).toBe(3)
+        expect(linkedList.tail.value).toBe(3)
+        linkedList.deleteHead()
+        linkedList.deleteHead()
+        linkedList.deleteHead()
+        linkedList.deleteHead()
+        linkedList.deleteHead()
+        expect(linkedList.head).toBeNull()
+        expect(linkedList.tail).toBeNull()
+
+    });
 })
