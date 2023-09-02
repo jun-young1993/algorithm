@@ -3,6 +3,8 @@
 ## data-structures
 - linked-list
 - dobuly-linked-list
+- queue
+  - linked-list 
 
 
 ## TEST
