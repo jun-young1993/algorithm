@@ -4,7 +4,8 @@
 - linked-list
 - dobuly-linked-list
 - queue
-  - linked-list 
+- stack
+- hash-table
 
 
 ## TEST
